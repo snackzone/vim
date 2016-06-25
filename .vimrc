@@ -38,9 +38,6 @@ if has('mouse')
   set mouse=a
 endif
 
-syntax on
-filetype plugin indent on
-
 """ general things
 set backspace=indent,eol,start
 set autoread
@@ -135,6 +132,8 @@ if has("autocmd") && exists("+omnifunc")
 endif 
 
 ""Pathogen stuff
-filetype off
 execute pathogen#infect()
+filetype off
+syntax on
+filetype plugin indent on
 
