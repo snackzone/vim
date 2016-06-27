@@ -125,14 +125,17 @@ syntax on
 filetype plugin indent on
 colorscheme distinguished
 
+""Show filename
+set statusline=%f ""%f is relative path, %F is absolute
+
 ""Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-""let g:syntastic_js_checkers = ["js"]
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_js_checkers = ["js"]
+""let g:syntastic_javascript_checkers = ['eslint']
 
 " disable syntastic on the statusline
 let g:statline_syntastic = 0
