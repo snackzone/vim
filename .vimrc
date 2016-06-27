@@ -70,9 +70,12 @@ nnoremap / /\v
 vnoremap / /\v
 set ignorecase
 set smartcase
+set scrolloff=2
+set title
 set gdefault
 set incsearch
 set showmatch  "Weird parentheses highlighting
+set matchpairs+=<:>
 set hlsearch
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
@@ -115,13 +118,24 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+""Pathogen stuff
+execute pathogen#infect()
+filetype off
+syntax on
+filetype plugin indent on
+colorscheme distinguished
+
 ""Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_js_checkers = ["js"]
+""let g:syntastic_js_checkers = ["js"]
+let g:syntastic_javascript_checkers = ['eslint']
+
+" disable syntastic on the statusline
+let g:statline_syntastic = 0
 
 ""SyntaxComplete
 if has("autocmd") && exists("+omnifunc") 
@@ -131,9 +145,3 @@ if has("autocmd") && exists("+omnifunc")
      \  endif 
 endif 
 
-""Pathogen stuff
-execute pathogen#infect()
-filetype off
-syntax on
-filetype plugin indent on
-colorscheme distinguished
