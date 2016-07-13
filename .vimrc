@@ -88,17 +88,25 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 "" Training-wheels
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
+" edit file in current low level directory
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+
+" vsp in current low level directory
+nnoremap <Leader>v :vsp <C-R>=expand('%:p:h') . '/'<CR>
+
+" sp in current low level directory
+nnoremap <Leader>s :sp <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap ; :
 
 "" Auto-save
@@ -136,6 +144,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_js_checkers = ["js"]
 ""let g:syntastic_javascript_checkers = ['eslint']
+
+" disable html_tidy errors
+let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
 " disable syntastic on the statusline
 let g:statline_syntastic = 0
