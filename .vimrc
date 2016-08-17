@@ -132,6 +132,8 @@ filetype off
 syntax on
 filetype plugin indent on
 colorscheme distinguished
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_distinguished = 1
 
 ""Show filename
 set statusline=%f ""%f is relative path, %F is absolute
