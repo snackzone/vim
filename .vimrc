@@ -135,6 +135,9 @@ colorscheme distinguished
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_distinguished = 1
 
+""Vim-move
+let g:move_key_modifier = 'C'
+
 ""Show filename
 set statusline=%f ""%f is relative path, %F is absolute
 
