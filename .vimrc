@@ -81,6 +81,10 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
+"" External clipboard register
+nnoremap <leader>c "*
+vnoremap <leader>c "*
+
 "" Line-wrapping
 set nowrap
 set textwidth=79
@@ -148,7 +152,7 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_js_checkers = ["js"]
-""let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " disable html_tidy errors
 let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
@@ -164,3 +168,10 @@ if has("autocmd") && exists("+omnifunc")
      \  endif 
 endif 
 
+" Highlight extra whitespace
+highlight ExtraWhitespace ctermbg=2 guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
