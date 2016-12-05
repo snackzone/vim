@@ -111,6 +111,8 @@ nnoremap <Leader>v :vsp <C-R>=expand('%:p:h') . '/'<CR>
 
 " sp in current low level directory
 nnoremap <Leader>s :sp <C-R>=expand('%:p:h') . '/'<CR>
+
+" enter command without shift
 nnoremap ; :
 
 "" Auto-save
@@ -130,8 +132,6 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-""Pathogen stuff
-execute pathogen#infect()
 filetype off
 syntax on
 filetype plugin indent on
@@ -161,12 +161,12 @@ let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 let g:statline_syntastic = 0
 
 ""SyntaxComplete
-if has("autocmd") && exists("+omnifunc") 
-  autocmd Filetype * 
-     \  if &omnifunc == "" | 
-     \  setlocal omnifunc=syntaxcomplete#Complete | 
-     \  endif 
-endif 
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+     \  if &omnifunc == "" |
+     \  setlocal omnifunc=syntaxcomplete#Complete |
+     \  endif
+endif
 
 " Highlight extra whitespace
 highlight ExtraWhitespace ctermbg=2 guibg=darkgreen
@@ -175,3 +175,26 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+call plug#begin('~/.vim/plugged')
+" must use single-quotes in this section
+
+Plug 'mileszs/ack.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'felixhummel/setcolors.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kchmck/vim-coffee-script'
+Plug 'airblade/vim-gitgutter'
+Plug 'matze/vim-move'
+Plug 'tpope/vim-fugitive'
+
+" Yet Another JavaScript Syntax
+Plug 'othree/yajs.vim'
+
+" For ES7 features
+Plug 'othree/es.next.syntax.vim'
+
+call plug#end()
