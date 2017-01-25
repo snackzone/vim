@@ -135,6 +135,8 @@ endif
 filetype off
 syntax on
 filetype plugin indent on
+set t_Co=256
+set background=dark
 colorscheme distinguished
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_distinguished = 1
@@ -190,6 +192,8 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'airblade/vim-gitgutter'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-fugitive'
+Plug 'pangloss/vim-javascript'
+Plug 'junegunn/goyo.vim'
 
 " Yet Another JavaScript Syntax
 Plug 'othree/yajs.vim'
