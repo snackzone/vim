@@ -91,6 +91,14 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
+"" Buffers
+set hidden
+nmap <leader>T :enew<cr>
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>q :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
+
 "" Training-wheels
 " nnoremap <up> <nop>
 " nnoremap <down> <nop>
@@ -139,6 +147,7 @@ set t_Co=256
 set background=dark
 colorscheme distinguished
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_distinguished = 1
 
 ""Vim-move
