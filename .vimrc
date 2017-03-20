@@ -130,7 +130,8 @@ inoremap jj <ESC>
 "" Vertical split shortcut
 nnoremap <leader>w <C-w>v<C-w>l
 
-nnoremap <leader>a :Ack
+cnoreabbrev Ack Ack!
+nnoremap <leader>a :Ack!<Space>
 
 filetype off
 syntax on
