@@ -13,6 +13,13 @@ set modelines=0
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" CTRL+P
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:5,results:5'
+
+" Jump to open buffer if possible
+let g:ctrlp_switch_buffer = 'ET'
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
@@ -203,6 +210,7 @@ Plug 'matze/vim-move'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/goyo.vim'
+Plug 'kien/ctrlp.vim'
 
 " Yet Another JavaScript Syntax
 Plug 'othree/yajs.vim'
