@@ -16,9 +16,7 @@ set backspace=indent,eol,start
 " CTRL+P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:5,results:5'
-
-" Jump to open buffer if possible
-let g:ctrlp_switch_buffer = 'ET'
+let g:ctrlp_switch_buffer = 'ET' " Jump to open buffer if possible
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -80,13 +78,14 @@ set smartcase
 set scrolloff=2
 set title
 set gdefault
-set incsearch
-set showmatch  "Weird parentheses highlighting
 set matchpairs+=<:>
+set incsearch
 set hlsearch
 nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
+
+set showmatch  "Weird parentheses highlighting
 
 "" External clipboard register
 nnoremap <leader>c "*
@@ -106,15 +105,7 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
-"" Training-wheels
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
+"" Move vertically across visual lines, not actual lines
 nnoremap j gj
 nnoremap k gk
 
@@ -139,13 +130,7 @@ inoremap jj <ESC>
 "" Vertical split shortcut
 nnoremap <leader>w <C-w>v<C-w>l
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
+nnoremap <leader>a :Ack
 
 filetype off
 syntax on
