@@ -100,6 +100,9 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
+"" Tabs
+nnoremap <leader><tab> :tabedit<cr>
+
 "" Buffers
 set hidden
 nmap <leader>T :enew<cr>
