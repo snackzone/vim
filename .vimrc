@@ -94,6 +94,9 @@ set showmatch  "Weird parentheses highlighting
 nnoremap <leader>c "*
 vnoremap <leader>c "*
 
+" toggle paste mode
+nnoremap <Leader>p :set invpaste<CR>
+
 "" Line-wrapping
 set nowrap
 set textwidth=79
@@ -110,6 +113,9 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
+
+"" Closes all buffers but the current one
+nmap <leader>o :BufOnly<CR>
 
 "" Move vertically across visual lines, not actual lines
 nnoremap j gj
