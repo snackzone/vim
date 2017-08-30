@@ -54,9 +54,6 @@ set swapfile
 set dir=~/tmp
 set backupdir=~/tmp//
 
-""" disable folding
-let g:vim_markdown_folding_disabled=1
-
 """ line numbers
 set number
 
@@ -191,6 +188,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Markdown Settings
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_fenced_languages = ['js=javascript']
 
 call plug#begin('~/.vim/plugged')
 " must use single-quotes in this section
