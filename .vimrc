@@ -159,19 +159,23 @@ let g:move_key_modifier = 'C'
 set statusline=%f ""%f is relative path, %F is absolute
 
 ""Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_js_checkers = ["js"]
-let g:syntastic_javascript_checkers = ['eslint']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_js_checkers = ["js"]
+"let g:syntastic_javascript_checkers = ['eslint']
 
 " disable html_tidy errors
-let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
+"let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
 " disable syntastic on the statusline
-let g:statline_syntastic = 0
+"let g:statline_syntastic = 0
+
+""Ale
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 
 ""SyntaxComplete
 if has("autocmd") && exists("+omnifunc")
@@ -200,7 +204,7 @@ Plug 'mileszs/ack.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'felixhummel/setcolors.vim'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kchmck/vim-coffee-script'
@@ -210,6 +214,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/ctrlp.vim'
+
+" Asynchronous Linting Engine
+Plug 'w0rp/ale'
+
+" Markdown stuff
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Yet Another JavaScript Syntax
 Plug 'othree/yajs.vim'
