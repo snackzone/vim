@@ -176,6 +176,7 @@ set statusline=%f ""%f is relative path, %F is absolute
 ""Ale
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
+let g:ale_linters = {'html': [], 'javascript': ['eslint']}
 
 ""SyntaxComplete
 if has("autocmd") && exists("+omnifunc")
