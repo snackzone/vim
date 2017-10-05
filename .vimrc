@@ -199,7 +199,7 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_fenced_languages = ['js=javascript']
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.css,*.scss,*.json PrettierAsync
+autocmd BufWritePre ~/canvas/{*.js,*.css,*.scss,*.json} Prettier
 
 call plug#begin('~/.vim/plugged')
 " must use single-quotes in this section
