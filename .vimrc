@@ -158,6 +158,9 @@ let g:move_key_modifier = 'C'
 ""Show filename
 set statusline=%f ""%f is relative path, %F is absolute
 
+""NERDTree
+nnoremap <S-tab> :NERDTreeToggle <Enter>
+
 ""Syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
