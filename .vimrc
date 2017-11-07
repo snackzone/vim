@@ -104,6 +104,12 @@ set colorcolumn=85
 "" Tabs
 nnoremap <leader><tab> :tabedit<cr>
 
+"" Navigate split panes
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 "" Buffers
 set hidden
 nmap <leader>T :enew<cr>
