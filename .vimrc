@@ -17,8 +17,7 @@ set backspace=indent,eol,start
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:5,results:5'
 let g:ctrlp_switch_buffer = 'ET' " Jump to open buffer if possible
-let g:ctrlp_root_markers = ['package.json']
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_root_markers = ['package.json', '.git']
 let g:ctrlp_custom_ignore = {
  \ 'dir': 'node_modules\|bower_components\|log\|vendor\|public\/system\|tmp\|dist',
  \ }
