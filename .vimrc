@@ -198,8 +198,8 @@ autocmd BufWinLeave * call clearmatches()
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_fenced_languages = ['js=javascript']
 
-let g:prettier#autoformat = 0
-autocmd BufWritePre ~/canvas/{*.js,*.css,*.scss,*.json} Prettier
+let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_fix_on_save=1
 
 call plug#begin('~/.vim/plugged')
 " must use single-quotes in this section
@@ -208,7 +208,6 @@ Plug 'mileszs/ack.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'felixhummel/setcolors.vim'
-"Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kchmck/vim-coffee-script'
@@ -218,11 +217,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/ctrlp.vim'
-
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'css', 'scss', 'json'] }
 
 " Asynchronous Linting Engine
 Plug 'w0rp/ale'
