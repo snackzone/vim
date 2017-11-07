@@ -217,6 +217,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Asynchronous Linting Engine
 Plug 'w0rp/ale'
